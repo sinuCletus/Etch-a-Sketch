@@ -12,7 +12,8 @@ function userGrid() {
 }
 
 function createGrid() {
-const gridSize = cells.value;
+    const gridSize = cells.value;
+
     grid.style.gridTemplateColumns = `repeat(${gridSize}, 1fr)`;
     grid.style.gridTemplateRows = `repeat(${gridSize}, 1fr)`;
 
@@ -25,5 +26,4 @@ const gridSize = cells.value;
             gridSquare.classList.add('color');
         });
     }
-
 }
