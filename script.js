@@ -6,51 +6,37 @@ const submit = document.getElementById('gridBtn');
 
 
 //default grid when page first loads
-defaultGrid();
+const DEFAULT_SIZE = 16;
 
+window.onload = () => {
+    createGrid(DEFAULT_SIZE);
+    copyCat.innerHTML = DEFAULT_SIZE + ' x ' + DEFAULT_SIZE;
+    cells.value = DEFAULT_SIZE;
+}
 
 //create grid size display in a 'number x number' format in the controls div
-submit.addEventListener('click', userGrid);
+submit.addEventListener('click', newGrid);
 
 //FUNCTIONS
 
-function userGrid() {
+function newGrid() {
         copyCat.innerHTML = cells.value + ' x ' + cells.value;
-        createGrid();
+        grid.innerHTML='';
+        createGrid(cells.value);
 }
 
-function defaultGrid() {
-    const gridSize = 16;
-
-    grid.style.gridTemplateColumns = `repeat(${gridSize}, 1fr)`;
-    grid.style.gridTemplateRows = `repeat(${gridSize}, 1fr)`;
-
-    for(let i = 0; i < gridSize * gridSize; i++) {
-        let gridSquare = document.createElement('div');
-
-        gridSquare.classList.add('square');
-        grid.appendChild(gridSquare);
-
-        gridSquare.addEventListener('mouseenter', () => {
-            gridSquare.classList.add('color');
-        });
-    }
-}
-
-function createGrid() {
-    const gridSize = cells.value;
-
-    grid.style.gridTemplateColumns = `repeat(${gridSize}, 1fr)`;
-    grid.style.gridTemplateRows = `repeat(${gridSize}, 1fr)`;
-
-    for(let i = 0; i < gridSize * gridSize; i++) {
-        let gridSquare = document.createElement('div');
-
-        gridSquare.classList.add('square');
-        grid.appendChild(gridSquare);
-
-        gridSquare.addEventListener('mouseenter', () => {
-            gridSquare.classList.add('color');
-        });
-    }
+function createGrid(size) {
+        grid.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
+        grid.style.gridTemplateRows = `repeat(${size}, 1fr)`;
+    
+        for(let i = 0; i < size * size; i++) {
+            let gridSquare = document.createElement('div');
+    
+            gridSquare.classList.add('square');
+            grid.appendChild(gridSquare);
+    
+            gridSquare.addEventListener('mouseenter', () => {
+                gridSquare.classList.add('color');
+            });
+        }
 }
