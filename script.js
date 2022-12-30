@@ -85,12 +85,6 @@ function createGrid(size) {
                     case 'rainbow':
                         gridSquare.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
                         break;
-                    case 'darken':
-                        console.log('darken')
-                        break;
-                    case 'lighten':
-                        console.log('lighten');
-                        break;
                 }
             });
         }

@@ -15,10 +15,8 @@
         <main id="main">
             <div id="controls">
                 <form id="form">
-                    <input id="colorPicker" type="color"><input type="radio" id="customColor" name="color" value="custom" autocomplete="off">Color
-                    <input type="radio" name="color" id="rainbow" value="rainbow" autocomplete="off">Rainbow
-                    <input type="radio" name="color" id="darken" value="darken" autocomplete="off">Darken
-                    <input type="radio" name="color" id="lighten" value="lighten" autocomplete="off">Lighten
+                    <label for="customColor"><input type="radio" id="customColor" name="color" value="custom" autocomplete="off"> Color <input id="colorPicker" type="color"></label>
+                    <label for="rainbow"><input type="radio" name="color" id="rainbow" value="rainbow" autocomplete="off"> Rainbow</label>
                 </form>
 
                 <p>Grid Size: <span id="copy-cat"></span></p><input id="cells" type="number" placeholder=" Select Number Between 2-99">
