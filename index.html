@@ -8,14 +8,20 @@
         <link rel="stylesheet" href="styles.css">
     </head>
     <body>
-        <header id="banner">
+        <header>
             <h1>Etch-a-Sketch</h1>
         </header>
 
         <main id="main">
             <div id="controls">
-                <p>Grid Size: Select Number Between 2-99</p><input id="cells" type="number">
-                <p id="copy-cat"></p>
+                <form id="form">
+                    <input id="colorPicker" type="color"><input type="radio" id="customColor" name="color" value="custom" autocomplete="off">Color
+                    <input type="radio" name="color" id="rainbow" value="rainbow" autocomplete="off">Rainbow
+                    <input type="radio" name="color" id="darken" value="darken" autocomplete="off">Darken
+                    <input type="radio" name="color" id="lighten" value="lighten" autocomplete="off">Lighten
+                </form>
+
+                <p>Grid Size: <span id="copy-cat"></span></p><input id="cells" type="number" placeholder=" Select Number Between 2-99">
                 <input id="gridBtn" type="submit" value="Submit">
             </div>
 
@@ -23,9 +29,7 @@
         </main>
 
         <footer id="footer">
-
         </footer>
-
         <script src="script.js"></script>
     </body>
 </html>

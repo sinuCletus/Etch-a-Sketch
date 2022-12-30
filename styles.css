@@ -12,6 +12,8 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
+    max-width: 80%;
+    min-width: 600px;
 }
 
 #grid {
@@ -25,8 +27,14 @@ main {
     width: auto;
     height: auto;
     background-color: grey;
+    border: 1px solid #111111;
 }
 
-.color  {
-    background-color: turquoise;
+.draw .paints, .draw label {
+    display: block;
+}
+
+#colorPicker {
+    max-height: 20px;
+    border: 1px solid black;
 }
